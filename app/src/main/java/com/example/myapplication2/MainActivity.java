@@ -1,7 +1,9 @@
 package com.example.myapplication2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private Long b = 0L; // Второй операнд
     private String currentOperation = ""; // Текущая операция (+, -, *, /)
     private Boolean isOperationClock = false;
+    private Boolean openActivity = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+
     public void onNumberClick(View view) {
         String textButton = ((MaterialButton) view).getText().toString();
 
@@ -47,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
             textView.append(textButton);
         }
 
+        openActivity = false;
         isOperationClock = false;
     }
 
@@ -81,16 +87,37 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (view.getId() == R.id.btn_plus) {
+            openActivity = false;
             currentOperation = "+";
         } else if (view.getId() == R.id.btn_minus) {
+            openActivity = false;
             currentOperation = "-";
         } else if (view.getId() == R.id.btn_multi) {
+            openActivity = false;
             currentOperation = "*";
         } else if (view.getId() == R.id.btn_divi) {
+            openActivity = false;
             currentOperation = "/";
         } else if (view.getId() == R.id.btn_equal) {
+            openActivity = true;
             currentOperation = "";
         }
+
+        Button visibility = findViewById(R.id.click_me);
+
+
+        if (openActivity) {
+            visibility.setVisibility(View.VISIBLE);
+        } else {
+            visibility.setVisibility(View.GONE);
+        }
+
+        visibility.setOnClickListener(v -> {
+            String input2 = textView.getText().toString();
+            Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+            intent.putExtra("equal", input2);
+            startActivity(intent);
+        });
 
         isOperationClock = true;
     }

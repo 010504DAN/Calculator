@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/darkBlue"
+    tools:context=".MainActivity2">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        app:cardCornerRadius="20dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginHorizontal="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:cardBackgroundColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/text"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textSize="20sp"
+                android:textColor="@color/darkBlue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/Category"
+                android:text="Category"
+                android:background="@drawable/bg_category"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textSize="15sp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:layout_width="100dp"
+                android:layout_height="30dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/heart"
+                android:layout_width="50dp"
+                android:layout_height="36dp"
+                android:backgroundTint="@color/pink"
+                android:drawableStart="@drawable/img_3"
+                android:drawableTint="@color/white"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/free"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Free"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toTopOf="@+id/price1"
+                app:layout_constraintStart_toStartOf="@+id/price1" />
+
+            <TextView
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="50dp"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/price1"
+                android:text="Price"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/participants"
+                android:text="Participants"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/accessibility1"
+                android:text="Accessibility"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:id="@+id/box"
+                android:background="@drawable/bg_view"
+                android:layout_marginStart="30dp"
+                android:layout_marginBottom="7dp"
+                app:layout_constraintStart_toEndOf="@id/image"
+                app:layout_constraintBottom_toTopOf="@id/accessibility1"
+                android:layout_width="90dp"
+                android:layout_height="15dp"/>
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/img"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toBottomOf="@id/participants"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/next"
+        android:background="@drawable/bg_button"
+        android:text="Next"
+        android:textSize="15sp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/card"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="10dp"
+        android:layout_height="60dp"/>
+
+    <TextView
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintTop_toBottomOf="@id/next"
+        android:id="@+id/category"
+        android:text="Category"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        app:layout_constraintStart_toEndOf="@id/category"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/next"
+        android:layout_marginTop="60dp"
+        android:id="@+id/price"
+        android:text="Price"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        app:layout_constraintStart_toStartOf="@id/price"
+        app:layout_constraintTop_toBottomOf="@id/price"
+        android:layout_marginTop="80dp"
+        android:id="@+id/accessibility"
+        android:text="Accessibility"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <SeekBar
+        app:layout_constraintStart_toStartOf="@id/price"
+        app:layout_constraintTop_toBottomOf="@id/price"
+        android:id="@+id/seekBar"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"/>
+
+    <SeekBar
+        app:layout_constraintStart_toStartOf="@id/accessibility"
+        app:layout_constraintTop_toBottomOf="@id/accessibility"
+        android:id="@+id/seekBar2"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"/>
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/bg_spinner"
+        app:layout_constraintTop_toBottomOf="@id/category"
+        android:spinnerMode="dropdown"
+        android:layout_width="180dp"
+        android:layout_height="50dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
